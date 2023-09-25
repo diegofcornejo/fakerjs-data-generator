@@ -51,10 +51,14 @@ const generateFile = async (template, format) => {
 };
 
 const generateJSONFile = async (template, data) => {
-	const jsonData = JSON.stringify(data, null, 2);
-	const filePath = `${pathToSave}/${template.name}.json`;
-	await fs.writeFileSync(filePath, jsonData, 'utf8');
-	console.log(`Registros de ${template.name} guardados en ${filePath}`);
+	try {
+		const jsonData = JSON.stringify(data, null, 2);
+		const filePath = `${pathToSave}/${template.name}.json`;
+		fs.writeFileSync(filePath, jsonData, 'utf8');
+		console.log(`Registros de ${template.name} guardados en ${filePath}`);
+	} catch (err) {
+		console.error(`Error al guardar el archivo ${template.name}.json:`, err);
+	}
 }
 
 const generateSQLFile = async (template, data) => {
@@ -64,7 +68,7 @@ const generateSQLFile = async (template, data) => {
 			return `INSERT INTO ${template.name} VALUES ('${values}');\n`;
 		}).join('');
 		const filePath = `${pathToSave}/${template.name}.sql`;
-		await fs.writeFileSync(filePath, sqlData);
+		fs.writeFileSync(filePath, sqlData);
 		console.log(`Registros de ${template.name} guardados en ${filePath}`);
 	} catch (err) {
 		console.error(`Error al guardar el archivo ${template.name}.sql:`, err);
@@ -78,7 +82,7 @@ const generateCSVFile = async (template, data) => {
 			return `${values}\n`;
 		}).join('');
 		const filePath = `${pathToSave}/${template.name}.csv`;
-		await fs.writeFileSync(filePath, csvData);
+		fs.writeFileSync(filePath, csvData);
 		console.log(`Registros de ${template.name} guardados en ${filePath}`);
 	} catch (err) {
 		console.error(`Error al guardar el archivo ${template.name}.csv:`, err);
