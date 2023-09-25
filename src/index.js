@@ -32,13 +32,13 @@ const generateData = (template) => {
 const generateFile = async (template, format) => {
 	try {
 		const data = await generateData(template);
+		//Save data in memory execution to use in the next step
+		global[template.name] = data;
 		if (format === 'sql') {
 			await generateSQLFile(template, data);
 		} else {
 			const jsonData = JSON.stringify(data, null, 2);
 			const filePath = `${pathToSave}/${template.name}.json`;
-			//Save data in memory execution to use in the next step
-			global[template.name] = data;
 			await fs.writeFileSync(filePath, jsonData, 'utf8');
 			console.log(`Registros de ${template.name} guardados en ${filePath}`);
 		}
