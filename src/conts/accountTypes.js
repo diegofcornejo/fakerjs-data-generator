@@ -18,4 +18,4 @@ const accountTypes = [
 	'Linea de credito'
 ];
 
-export { accountTypes }
+export default accountTypes;
