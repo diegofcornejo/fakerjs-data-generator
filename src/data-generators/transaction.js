@@ -1,5 +1,5 @@
 import { fakerES_MX as faker } from '@faker-js/faker';
-import { banks } from '../conts/index.js';
+import { banks } from '../const/index.js';
 
 const transaction = (dependencies) => {
 	const client = faker.helpers.arrayElement(dependencies.clients);

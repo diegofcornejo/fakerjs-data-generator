@@ -1,5 +1,5 @@
 import { fakerES_MX as faker } from '@faker-js/faker';
-import { channels, accountTypes } from '../conts/index.js';
+import { channels, accountTypes } from '../const/index.js';
 import { generateRandomLatLong, generateNameAndGender } from '../helper.js';
 
 const client = () => {
