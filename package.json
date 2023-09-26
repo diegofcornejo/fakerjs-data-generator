@@ -6,7 +6,8 @@
 		"generate": "node src/index.js",
 		"generate:json": "node src/index.js json",
 		"generate:sql": "node src/index.js sql",
-		"generate:csv": "node src/index.js csv"
+		"generate:csv": "node src/index.js csv",
+		"generate:all": "node src/index.js all"
 	},
   "devDependencies": {
     "bun-types": "latest"

@@ -1,4 +1,4 @@
-import {client, agent, transaction} from './generators/index.js';
+import {client, agent, transaction} from './data-generators/index.js';
 
 const templates = [
 	{
