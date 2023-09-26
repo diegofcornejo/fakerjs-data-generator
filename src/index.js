@@ -21,6 +21,8 @@ const generateData = (template) => {
 			for (let i = 0; i < template.quantity; i++) {
 				data.push(template.generator(additionalData));
 			}
+			//Save data in memory execution to use in the next step
+			global[template.name] = data;
 			resolve(data);
 		} catch (err) {
 			console.error(`Error al generar los datos:`, err);
@@ -32,8 +34,6 @@ const generateData = (template) => {
 const generateFile = async (template, format) => {
 	try {
 		const data = await generateData(template);
-		//Save data in memory execution to use in the next step
-		global[template.name] = data;
 		switch (format) {
 			case 'csv':
 				await generateCSVFile(template, data);
