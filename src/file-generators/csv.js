@@ -1,4 +1,5 @@
 import fs from 'fs';
+import logger from '../logger.js';
 
 const generateCSVFile = async (template, data, pathToSave) => {
 	pathToSave = `${pathToSave}/csv`;
@@ -12,9 +13,9 @@ const generateCSVFile = async (template, data, pathToSave) => {
 		}).join('');
 		const filePath = `${pathToSave}/${template.name}.csv`;
 		fs.writeFileSync(filePath, csvData);
-		console.log(`Registros de ${template.name} guardados en ${filePath}`);
+		logger.info(`Records of ${template.name} saved in ${filePath}`);
 	} catch (err) {
-		console.error(`Error al guardar el archivo ${template.name}.csv:`, err);
+		logger.error(`Error while saving the file ${filePath}: ${err}`);
 	}
 }
 

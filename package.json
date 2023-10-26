@@ -1,14 +1,10 @@
 {
-  "name": "data-generator",
+  "name": "fakerjs-data-generator",
   "module": "index.js",
   "type": "module",
-	"scripts": {
-		"generate": "node src/index.js",
-		"generate:json": "node src/index.js json",
-		"generate:sql": "node src/index.js sql",
-		"generate:csv": "node src/index.js csv",
-		"generate:all": "node src/index.js all"
-	},
+  "scripts": {
+    "generate": "node src/index.js"
+  },
   "devDependencies": {
     "bun-types": "latest"
   },
@@ -16,6 +12,26 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@faker-js/faker": "^8.1.0"
-  }
+    "@faker-js/faker": "^8.1.0",
+    "pino": "^8.16.1",
+    "pino-pretty": "^10.2.3",
+    "yargs": "^17.7.2"
+  },
+  "description": "To install dependencies:",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegofcornejo/fakerjs-data-generator.git"
+  },
+  "keywords": [
+    "fakerjs",
+    "mock"
+  ],
+  "author": "Diego Cornejo <diegof.cornejo@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diegofcornejo/fakerjs-data-generator/issues"
+  },
+  "homepage": "https://github.com/diegofcornejo/fakerjs-data-generator#readme"
 }

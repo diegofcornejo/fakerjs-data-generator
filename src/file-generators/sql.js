@@ -12,9 +12,9 @@ const generateSQLFile = async (template, data, pathToSave) => {
 		}).join('');
 		const filePath = `${pathToSave}/${template.name}.sql`;
 		fs.writeFileSync(filePath, sqlData);
-		console.log(`Registros de ${template.name} guardados en ${filePath}`);
+		logger.info(`Records of ${template.name} saved in ${filePath}`);
 	} catch (err) {
-		console.error(`Error al guardar el archivo ${template.name}.sql:`, err);
+		logger.error(`Error while saving the file ${filePath}: ${err}`);
 	}
 };
 
