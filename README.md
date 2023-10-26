@@ -1,4 +1,4 @@
-# data-generator
+# fakerjs-data-generator
 
 To install dependencies:
 
