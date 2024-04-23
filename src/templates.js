@@ -4,7 +4,7 @@ const templates = [
 	{
 		name: 'clients',
 		generator: client,
-		quantity: 10
+		quantity: 5
 	},
 	{
 		name: 'agents',
@@ -14,7 +14,7 @@ const templates = [
 	{
 		name: 'transactions',
 		generator: transaction,
-		quantity: 100,
+		quantity: 5,
 		dependencies: ['clients']
 	}
 ];
