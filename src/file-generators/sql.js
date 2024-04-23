@@ -1,4 +1,5 @@
 import fs from 'fs';
+import logger from '../logger.js';
 
 const generateSQLFile = async (template, data, pathToSave) => {
 	pathToSave = `${pathToSave}/sql`;
